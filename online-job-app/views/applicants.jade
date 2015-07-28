@@ -2,6 +2,13 @@ extends layout
 
 block content
 	.container
-		h1 Applicants
+		h1 Here are the Applicants:
 		ul#applications.list-unstyled
-			li Applicants should go here.
+			for person in people
+				li
+					h4.applicant-name Applicant name : #{person.name}
+						button(action="/") 
+					p.applicant-bio Bio : #{person.bio}
+					p.applicant-skills Skills : #{person.skills}
+					p.applicant-years Years of Experience : #{person.years}
+					p.applicant-why Why : #{person.why}
